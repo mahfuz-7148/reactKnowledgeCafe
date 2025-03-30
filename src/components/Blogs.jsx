@@ -11,7 +11,7 @@ const Blogs = ({addToBookmarks, markAsRead}) => {
     }, []);
     return (
         <div className='w-2/3'>
-            <h1 className='text-4xl'>Blogs: {blogs.length}</h1>
+            <h1 className='text-4xl text-center mt-5 mb-5'>Blogs: {blogs.length}</h1>
             {
                 blogs.map(blog => (
                     <Blog
