@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Blog from "./Blog.jsx";
 
-const Blogs = ({addToBookmarks}) => {
+const Blogs = ({addToBookmarks, markAsRead}) => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
@@ -18,6 +18,7 @@ const Blogs = ({addToBookmarks}) => {
                     key={blog.id}
                     blog={blog}
                     addToBookmarks={addToBookmarks}
+                    markAsRead={markAsRead}
                     />
                 ))
             }

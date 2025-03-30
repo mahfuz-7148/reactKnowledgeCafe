@@ -1,6 +1,6 @@
 import 'remixicon/fonts/remixicon.css'
 
-const Blog = ({blog, addToBookmarks}) => {
+const Blog = ({blog, addToBookmarks, markAsRead}) => {
     const {id, title, cover, author, author_img, posted_date, reading_time, hashtags} = blog
     return (
         <div className='mb-20 space-y-4'>
@@ -18,6 +18,17 @@ const Blog = ({blog, addToBookmarks}) => {
                     <button onClick={() => addToBookmarks(blog)} className='ml-2 text-2xl text-red-600'><i className="ri-bookmark-fill cursor-pointer"></i></button>
                 </div>
             </div>
+            <h2 className='text-4xl'>{title}</h2>
+            <p>
+                {
+                    hashtags.map((hash, indx) => (
+                        <span key={indx}>
+                            <a href="">#{hash}</a>
+                        </span>
+                    ))
+                }
+            </p>
+            <button onClick={()=> markAsRead(id, reading_time)} className='text-purple-900 font-bold underline cursor-pointer'>Mark As Read</button>
         </div>
     );
 };
